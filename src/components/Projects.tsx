@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { basePath } from "@/lib/utils";
 
 interface PressLink {
   title: string;
@@ -183,7 +184,7 @@ export default function Projects() {
               {p.image && (
                 <div className="relative w-full h-40 bg-[var(--color-surface)] overflow-hidden">
                   <Image
-                    src={p.image}
+                    src={`${basePath}${p.image}`}
                     alt={p.imageAlt || p.title}
                     fill
                     style={p.imagePosition ? { objectPosition: p.imagePosition } : undefined}

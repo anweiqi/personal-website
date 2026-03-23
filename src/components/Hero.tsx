@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { basePath } from "@/lib/utils";
 
 export default function Hero() {
   return (
@@ -10,7 +11,7 @@ export default function Hero() {
       <div className="max-w-2xl text-center relative z-10">
         <div className="mb-6">
           <Image
-            src="/profile.jpg"
+            src={`${basePath}/profile.jpg`}
             alt="Weiqi An"
             width={120}
             height={120}

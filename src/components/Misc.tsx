@@ -1,3 +1,5 @@
+import { basePath } from "@/lib/utils";
+
 export default function Misc() {
   return (
     <section id="misc" className="py-24 px-6">
@@ -46,7 +48,7 @@ export default function Misc() {
               <div className="mt-4 rounded-xl overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/projects/go-masters.jpg"
+                  src={`${basePath}/projects/go-masters.jpg`}
                   alt="With Rui Naiwei (芮乃伟) and Jiang Zhujiu (江铸久)"
                   className="w-full object-cover rounded-xl"
                 />
@@ -80,7 +82,7 @@ export default function Misc() {
               <div className="rounded-xl overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/projects/skating.jpg"
+                  src={`${basePath}/projects/skating.jpg`}
                   alt="Learning to ice skate"
                   className="w-full object-cover rounded-xl"
                 />
