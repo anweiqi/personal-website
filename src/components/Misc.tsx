@@ -15,7 +15,7 @@ export default function Misc() {
                 ⚫
               </div>
               <div>
-                <h3 className="text-lg font-bold">Competitive Go Player</h3>
+                <h3 className="text-lg font-bold">Go Player</h3>
                 <p className="text-sm text-[var(--color-accent)]">
                   National Youth Champion 🏆
                 </p>
