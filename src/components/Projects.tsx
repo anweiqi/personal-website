@@ -68,7 +68,7 @@ const projects: Project[] = [
     title: "Shuffles → Collages",
     description:
       "A collage-making app that lets you cut out objects from any image, layer them into mood boards, and share them as interactive, shoppable content. It blew up on TikTok, hit #1 Lifestyle app on the App Store, and evolved into a core Pinterest format — collages now get 3× the engagement of traditional Pins.",
-    tags: ["React Native", "Computer Vision", "iOS"],
+    tags: ["Computer Vision", "iOS"],
     gradient: "from-amber-500 to-orange-500",
     emoji: "✨",
     image: "/projects/shuffles.webp",
