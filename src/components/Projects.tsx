@@ -68,7 +68,7 @@ const projects: Project[] = [
     title: "Shuffles → Collages",
     description:
       "A collage-making app that lets you cut out objects from any image, layer them into mood boards, and share them as interactive, shoppable content. It blew up on TikTok, hit #1 Lifestyle app on the App Store, and evolved into a core Pinterest format — collages now get 3× the engagement of traditional Pins.",
-    tags: ["Computer Vision", "iOS"],
+    tags: ["Computer Vision", "iOS", "Recommendation System", "Indexing"],
     gradient: "from-amber-500 to-orange-500",
     emoji: "✨",
     image: "/projects/shuffles.webp",
@@ -140,7 +140,7 @@ const projects: Project[] = [
     title: "Goodwill & Friends Day",
     description:
       "The system behind those personalized \"Friendversary\" and \"Year in Review\" videos that show up in your Facebook feed — auto-generated from your posts, photos, likes, and friendship history. I also built Cultural Moments and Daily Greetings — animated seasonal cards that appeared atop the News Feed for hundreds of millions of people. ",
-    tags: ["Video Generation", "Personalization", "Facebook"],
+    tags: ["Video Generation", "Personalization", "React", "React Native", "GraphQL"],
 
     gradient: "from-violet-500 to-fuchsia-500",
     emoji: "🎬",
