@@ -74,7 +74,6 @@ const projects: Project[] = [
     image: "/projects/shuffles.webp",
     imageAlt: "Pinterest Shuffles collage app",
     icon: "/projects/shuffles-icon.png",
-    url: "https://www.shffls.com/",
     press: [
       {
         title: "Pinterest's Gen Z-focused Shuffles app has now inspired a new Pinterest feature",
@@ -179,16 +178,10 @@ export default function Projects() {
         <h2 className="text-3xl font-bold mb-12">Featured work</h2>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((p) => {
-            const Wrapper = p.url ? "a" : "div";
-            const wrapperProps = p.url
-              ? { href: p.url, target: "_blank" as const, rel: "noopener noreferrer" }
-              : {};
-            return (
-            <Wrapper
+          {projects.map((p) => (
+            <div
               key={p.title}
-              {...wrapperProps}
-              className={`group rounded-2xl border border-[var(--color-border)] overflow-hidden bg-white hover:shadow-lg transition-all flex flex-col${p.url ? " cursor-pointer" : ""}`}
+              className="group rounded-2xl border border-[var(--color-border)] overflow-hidden bg-white hover:shadow-lg transition-all flex flex-col"
             >
               {/* Image */}
               {p.image && (
@@ -293,9 +286,8 @@ export default function Projects() {
                   </div>
                 )}
               </div>
-            </Wrapper>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
