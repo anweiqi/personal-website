@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { basePath } from "@/lib/utils";
+
 
 interface PressLink {
   title: string;
@@ -23,6 +23,8 @@ interface Project {
   image?: string;
   imageAlt?: string;
   imagePosition?: string;
+  icon?: string;
+  url?: string;
   press?: PressLink[];
   funFact?: FunFact;
 }
@@ -71,6 +73,8 @@ const projects: Project[] = [
     emoji: "✨",
     image: "/projects/shuffles.webp",
     imageAlt: "Pinterest Shuffles collage app",
+    icon: "/projects/shuffles-icon.png",
+    url: "https://www.shffls.com/",
     press: [
       {
         title: "Pinterest's Gen Z-focused Shuffles app has now inspired a new Pinterest feature",
@@ -175,16 +179,22 @@ export default function Projects() {
         <h2 className="text-3xl font-bold mb-12">Featured work</h2>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((p) => (
-            <div
+          {projects.map((p) => {
+            const Wrapper = p.url ? "a" : "div";
+            const wrapperProps = p.url
+              ? { href: p.url, target: "_blank" as const, rel: "noopener noreferrer" }
+              : {};
+            return (
+            <Wrapper
               key={p.title}
-              className="group rounded-2xl border border-[var(--color-border)] overflow-hidden bg-white hover:shadow-lg transition-all flex flex-col"
+              {...wrapperProps}
+              className={`group rounded-2xl border border-[var(--color-border)] overflow-hidden bg-white hover:shadow-lg transition-all flex flex-col${p.url ? " cursor-pointer" : ""}`}
             >
               {/* Image */}
               {p.image && (
                 <div className="relative w-full h-40 bg-[var(--color-surface)] overflow-hidden">
                   <Image
-                    src={`${basePath}${p.image}`}
+                    src={p.image}
                     alt={p.imageAlt || p.title}
                     fill
                     style={p.imagePosition ? { objectPosition: p.imagePosition } : undefined}
@@ -197,11 +207,21 @@ export default function Projects() {
               <div className="p-5 flex flex-col flex-1">
                 {/* Header */}
                 <div className="flex items-start gap-3 mb-2">
-                  <div
-                    className={`w-9 h-9 rounded-lg bg-gradient-to-br ${p.gradient} flex items-center justify-center text-lg shrink-0 shadow-sm`}
-                  >
-                    {p.emoji}
-                  </div>
+                  {p.icon ? (
+                    <Image
+                      src={p.icon}
+                      alt={`${p.title} icon`}
+                      width={36}
+                      height={36}
+                      className="rounded-lg shrink-0 shadow-sm"
+                    />
+                  ) : (
+                    <div
+                      className={`w-9 h-9 rounded-lg bg-gradient-to-br ${p.gradient} flex items-center justify-center text-lg shrink-0 shadow-sm`}
+                    >
+                      {p.emoji}
+                    </div>
+                  )}
                   <h3 className="text-base font-bold group-hover:text-[var(--color-accent)] transition-colors pt-0.5 leading-snug">
                     {p.title}
                   </h3>
@@ -273,8 +293,9 @@ export default function Projects() {
                   </div>
                 )}
               </div>
-            </div>
-          ))}
+            </Wrapper>
+            );
+          })}
         </div>
       </div>
     </section>

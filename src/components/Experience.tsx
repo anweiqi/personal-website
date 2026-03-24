@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { basePath } from "@/lib/utils";
 
 interface Role {
   company: string;
@@ -62,7 +61,7 @@ export default function Experience() {
                 >
                   {role.logo ? (
                     <Image
-                      src={`${basePath}${role.logo}`}
+                      src={role.logo}
                       alt={role.company}
                       width={32}
                       height={32}

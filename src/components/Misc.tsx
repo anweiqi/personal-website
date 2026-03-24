@@ -1,4 +1,3 @@
-import { basePath } from "@/lib/utils";
 
 export default function Misc() {
   return (
@@ -48,7 +47,7 @@ export default function Misc() {
               <div className="mt-4 rounded-xl overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`${basePath}/projects/go-masters.jpg`}
+                  src={"/projects/go-masters.jpg"}
                   alt="With Rui Naiwei (芮乃伟) and Jiang Zhujiu (江铸久)"
                   className="w-full object-cover rounded-xl"
                 />
@@ -82,7 +81,7 @@ export default function Misc() {
               <div className="rounded-xl overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`${basePath}/projects/skating.jpg`}
+                  src={"/projects/skating.jpg"}
                   alt="Learning to ice skate"
                   className="w-full object-cover rounded-xl"
                 />
