@@ -33,7 +33,7 @@ const roles: Role[] = [
   },
   {
     company: "Peking University",
-    logo: "/logos/pku.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Peking_University_seal.svg",
     logoBg: "bg-red-50",
     period: "B.S. Electrical Engineering",
     description: `Beijing — where it all started. Studied electrical engineering, and somehow ended up writing software for a living. 🏛️`,
